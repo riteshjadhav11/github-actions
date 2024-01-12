@@ -8,3 +8,5 @@ jobs:
               uses: actions/checkout@v4
             - name: echo hello 
               run: echo hello
+            - name: cat temp.txt
+              run: cat temp.txt
