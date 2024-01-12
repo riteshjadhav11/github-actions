@@ -1,20 +1,11 @@
 name : This is a github action
 on: [push]
 jobs: 
-      test:
-       runs-on: ubuntu-latest
-       steps:
-         - name: test
-           run: echo test
-
-      build:
+      node:
         runs-on: ubuntu-latest
         steps:
-         - name: build
-           run: sleep 2m && echo build
-
-      deploy:
-         runs-on: ubuntu-latest
-         steps:
-         - name: deploy
-           run: echo deploy
+         - name: setup node.js
+           uses: actions/setup-node@v4
+           with: 
+             node-version: '21.5.0'
+         - run: node --version
